@@ -1,6 +1,13 @@
-# Capacitor Document Scanner
+# BUNKR Document Scanner
 
-[![Npm package version](https://img.shields.io/npm/v/capacitor-document-scanner/latest.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/capacitor-document-scanner) [![npm peer dependency version](https://img.shields.io/npm/dependency-version/capacitor-document-scanner/peer/@capacitor/core?color=222d3a&logo=capacitor&style=for-the-badge)](https://github.com/WebsiteBeaver/capacitor-document-scanner/blob/master/package.json)
+[![Npm package version](https://img.shields.io/npm/v/capacitor-document-scanner/latest.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/bunkr-document-scanner) [![npm peer dependency version](https://img.shields.io/npm/dependency-version/capacitor-document-scanner/peer/@capacitor/core?color=222d3a&logo=capacitor&style=for-the-badge)](https://github.com/ryan-bunkr/bunkr-document-scanner/blob/master/package.json)
+
+---
+
+NOTE:
+This is a fork of capacitor-document-scanner that's been updated from Cap v5 to Cap v6 support. It is maintained by the bunkr team solely to ensure availability. If an official capacitor-community or the origininal capacitor-document-scanner are updated, they should be used instead of this.
+
+---
 
 This is a Capacitor plugin that lets you scan documents using Android and iOS. You can use it to create
 apps that let users scan notes, homework, business cards, receipts, or anything with a rectangular shape.
@@ -18,27 +25,29 @@ npx cap sync
 
 ## Examples
 
-* [Basic Example](#basic-example)
-* [Limit Number of Scans](#limit-number-of-scans)
-* [Remove Cropper](#remove-cropper)
+- [Basic Example](#basic-example)
+- [Limit Number of Scans](#limit-number-of-scans)
+- [Remove Cropper](#remove-cropper)
 
 ### Basic Example
 
 ```typescript
-import { Capacitor } from '@capacitor/core'
-import { DocumentScanner } from 'capacitor-document-scanner'
+import { Capacitor } from '@capacitor/core';
+import { DocumentScanner } from 'capacitor-document-scanner';
 
 const scanDocument = async () => {
   // start the document scanner
-  const { scannedImages } = await DocumentScanner.scanDocument()
+  const { scannedImages } = await DocumentScanner.scanDocument();
 
   // get back an array with scanned image file paths
   if (scannedImages.length > 0) {
     // set the img src, so we can view the first scanned image
-    const scannedImage = document.getElementById('scannedImage') as HTMLImageElement
-    scannedImage.src = Capacitor.convertFileSrc(scannedImages[0])
+    const scannedImage = document.getElementById(
+      'scannedImage',
+    ) as HTMLImageElement;
+    scannedImage.src = Capacitor.convertFileSrc(scannedImages[0]);
   }
-}
+};
 ```
 
 Here's what this example looks like with several items
@@ -65,54 +74,58 @@ https://user-images.githubusercontent.com/26162804/161643203-2a265cc1-5cf1-4474-
 
 ### Limit Number of Scans
 
-You can limit the number of scans. For example if your app lets a user scan a business 
+You can limit the number of scans. For example if your app lets a user scan a business
 card you might want them to only capture the front and back. In this case you can set
 maxNumDocuments to 2. This only works on Android.
 
 ```typescript
-import { Capacitor } from '@capacitor/core'
-import { DocumentScanner } from 'capacitor-document-scanner'
+import { Capacitor } from '@capacitor/core';
+import { DocumentScanner } from 'capacitor-document-scanner';
 
 const scanDocument = async () => {
   // limit the number of scans to 2
   const { scannedImages } = await DocumentScanner.scanDocument({
-    maxNumDocuments: 2
-  })
+    maxNumDocuments: 2,
+  });
 
   // get back an array with scanned image file paths
   if (scannedImages.length > 0) {
     // set the img src, so we can view the first scanned image
-    const scannedImage = document.getElementById('scannedImage') as HTMLImageElement
-    scannedImage.src = Capacitor.convertFileSrc(scannedImages[0])
+    const scannedImage = document.getElementById(
+      'scannedImage',
+    ) as HTMLImageElement;
+    scannedImage.src = Capacitor.convertFileSrc(scannedImages[0]);
   }
-}
+};
 ```
 
 https://user-images.githubusercontent.com/26162804/161643345-6fe15f33-9414-46f5-b5d5-24d88948e801.mp4
 
 ### Remove Cropper
 
-You can automatically accept the detected document corners, and prevent the user from 
+You can automatically accept the detected document corners, and prevent the user from
 making adjustments. Set letUserAdjustCrop to false to skip the crop screen. This limits
 the max number of scans to 1. This only works on Android.
 
 ```typescript
-import { Capacitor } from '@capacitor/core'
-import { DocumentScanner } from 'capacitor-document-scanner'
+import { Capacitor } from '@capacitor/core';
+import { DocumentScanner } from 'capacitor-document-scanner';
 
 const scanDocument = async () => {
   // skip the crop screen
   const { scannedImages } = await DocumentScanner.scanDocument({
-    letUserAdjustCrop: false
-  })
+    letUserAdjustCrop: false,
+  });
 
   // get back an array with scanned image file paths
   if (scannedImages.length > 0) {
     // set the img src, so we can view the first scanned image
-    const scannedImage = document.getElementById('scannedImage') as HTMLImageElement
-    scannedImage.src = Capacitor.convertFileSrc(scannedImages[0])
+    const scannedImage = document.getElementById(
+      'scannedImage',
+    ) as HTMLImageElement;
+    scannedImage.src = Capacitor.convertFileSrc(scannedImages[0]);
   }
-}
+};
 ```
 
 https://user-images.githubusercontent.com/26162804/161643377-cabd7f51-a16f-4f5e-938a-afb6f3b1c8cb.mp4
@@ -129,9 +142,9 @@ Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configura
 
 <docgen-index>
 
-* [`scanDocument(...)`](#scandocument)
-* [Interfaces](#interfaces)
-* [Enums](#enums)
+- [`scanDocument(...)`](#scandocument)
+- [Interfaces](#interfaces)
+- [Enums](#enums)
 
 </docgen-index>
 
@@ -152,11 +165,9 @@ Opens the camera, and starts the document scan
 
 **Returns:** <code>Promise&lt;<a href="#scandocumentresponse">ScanDocumentResponse</a>&gt;</code>
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### ScanDocumentResponse
 
@@ -164,7 +175,6 @@ Opens the camera, and starts the document scan
 | ------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | **`scannedImages`** | <code>string[]</code>                                                             | This is an array with either file paths or base64 images for the document scan.                                                   |
 | **`status`**        | <code><a href="#scandocumentresponsestatus">ScanDocumentResponseStatus</a></code> | The status lets you know if the document scan completes successfully, or if the user cancels before completing the document scan. |
-
 
 #### ScanDocumentOptions
 
@@ -175,9 +185,7 @@ Opens the camera, and starts the document scan
 | **`maxNumDocuments`**     | <code>number</code>                                   | Android only: The maximum number of photos an user can take (not counting photo retakes)                                                                                                                                                                                                                                                  | <code>: 24</code>                         |
 | **`responseType`**        | <code><a href="#responsetype">ResponseType</a></code> | The response comes back in this format on success. It can be the document scan image file paths or base64 images.                                                                                                                                                                                                                         | <code>: ResponseType.ImageFilePath</code> |
 
-
 ### Enums
-
 
 #### ScanDocumentResponseStatus
 
@@ -185,7 +193,6 @@ Opens the camera, and starts the document scan
 | ------------- | ---------------------- | --------------------------------------------------------------------------------------------------------- |
 | **`Success`** | <code>'success'</code> | The status comes back as success if the document scan completes successfully.                             |
 | **`Cancel`**  | <code>'cancel'</code>  | The status comes back as cancel if the user closes out of the camera before completing the document scan. |
-
 
 #### ResponseType
 
