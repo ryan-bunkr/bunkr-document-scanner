@@ -5,7 +5,7 @@
 ---
 
 NOTE:
-This is a fork of capacitor-document-scanner that's been updated from Cap v5 to Cap v6 support. It is maintained by the bunkr team solely to ensure availability. If an official capacitor-community or the origininal capacitor-document-scanner are updated, they should be used instead of this.
+This is a fork of capacitor-document-scanner that's been updated from Cap v5 to Cap v6 support. It is maintained by the bunkr team solely to ensure availability. If an official capacitor-community or the original capacitor-document-scanner are updated, they should be used instead of this.
 
 ---
 
