@@ -69,7 +69,8 @@
   },
   "capacitor": {
     "ios": {
-      "src": "ios"
+      "src": "ios",
+      "podspec": "CapacitorDocumentScanner.podspec"
     },
     "android": {
       "src": "android"
