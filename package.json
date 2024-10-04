@@ -1,6 +1,6 @@
 {
   "name": "bunkr-document-scanner",
-  "version": "6.0.3",
+  "version": "6.0.4",
   "description": "A Capacitor plugin that lets you scan documents using Android and iOS",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -69,8 +69,7 @@
   },
   "capacitor": {
     "ios": {
-      "src": "ios",
-      "podName": "CapacitorDocumentScanner"
+      "src": "ios"
     },
     "android": {
       "src": "android"
