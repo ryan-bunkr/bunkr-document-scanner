@@ -142,9 +142,9 @@ Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configura
 
 <docgen-index>
 
-- [`scanDocument(...)`](#scandocument)
-- [Interfaces](#interfaces)
-- [Enums](#enums)
+* [`scanDocument(...)`](#scandocument)
+* [Interfaces](#interfaces)
+* [Enums](#enums)
 
 </docgen-index>
 
@@ -165,9 +165,11 @@ Opens the camera, and starts the document scan
 
 **Returns:** <code>Promise&lt;<a href="#scandocumentresponse">ScanDocumentResponse</a>&gt;</code>
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### ScanDocumentResponse
 
@@ -175,6 +177,7 @@ Opens the camera, and starts the document scan
 | ------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | **`scannedImages`** | <code>string[]</code>                                                             | This is an array with either file paths or base64 images for the document scan.                                                   |
 | **`status`**        | <code><a href="#scandocumentresponsestatus">ScanDocumentResponseStatus</a></code> | The status lets you know if the document scan completes successfully, or if the user cancels before completing the document scan. |
+
 
 #### ScanDocumentOptions
 
@@ -185,7 +188,9 @@ Opens the camera, and starts the document scan
 | **`maxNumDocuments`**     | <code>number</code>                                   | Android only: The maximum number of photos an user can take (not counting photo retakes)                                                                                                                                                                                                                                                  | <code>: 24</code>                         |
 | **`responseType`**        | <code><a href="#responsetype">ResponseType</a></code> | The response comes back in this format on success. It can be the document scan image file paths or base64 images.                                                                                                                                                                                                                         | <code>: ResponseType.ImageFilePath</code> |
 
+
 ### Enums
+
 
 #### ScanDocumentResponseStatus
 
@@ -193,6 +198,7 @@ Opens the camera, and starts the document scan
 | ------------- | ---------------------- | --------------------------------------------------------------------------------------------------------- |
 | **`Success`** | <code>'success'</code> | The status comes back as success if the document scan completes successfully.                             |
 | **`Cancel`**  | <code>'cancel'</code>  | The status comes back as cancel if the user closes out of the camera before completing the document scan. |
+
 
 #### ResponseType
 
